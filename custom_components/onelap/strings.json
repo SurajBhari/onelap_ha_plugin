@@ -1,0 +1,44 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Onelap Vehicle Tracker",
+        "description": "Paste your Onelap share link or tracking id. Open the Onelap app, share a device, and copy the link (looks like https://r.onelap.in/#/shared?tid=XXXXXX).",
+        "data": {
+          "tracking_id": "Share link or tracking id"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Could not reach Onelap. Check your internet connection and try again.",
+      "invalid_tracking_id": "That tracking id / share link did not return any devices. Make sure the link is correct and sharing is still enabled.",
+      "unknown": "Unexpected error. See the logs for details."
+    },
+    "abort": {
+      "already_configured": "This Onelap share link is already set up."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Onelap options",
+        "data": {
+          "scan_interval": "Update interval (seconds)"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "speed": { "name": "Speed" },
+      "course": { "name": "Direction" },
+      "status": { "name": "Status" },
+      "satellites": { "name": "Satellites" },
+      "total_distance": { "name": "Total distance" },
+      "last_fix": { "name": "Last GPS fix" }
+    },
+    "binary_sensor": {
+      "ignition": { "name": "Ignition" }
+    }
+  }
+}

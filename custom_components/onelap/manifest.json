@@ -1,0 +1,12 @@
+{
+  "domain": "onelap",
+  "name": "Onelap Vehicle Tracker",
+  "codeowners": ["@surajbhari"],
+  "config_flow": true,
+  "documentation": "https://github.com/surajbhari/onelap_ha_plugin",
+  "integration_type": "hub",
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/surajbhari/onelap_ha_plugin/issues",
+  "requirements": [],
+  "version": "1.0.0"
+}
