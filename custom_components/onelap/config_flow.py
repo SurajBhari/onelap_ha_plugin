@@ -35,9 +35,9 @@ def _extract_tracking_id(raw: str) -> str:
 
     Examples handled::
 
-        FdUrRb
-        https://r.onelap.in/#/shared?tid=FdUrRb
-        https://r.onelap.in/#/shared?tid=FdUrRb&foo=bar
+        XXXXXX
+        https://r.onelap.in/#/shared?tid=XXXXXX
+        https://r.onelap.in/#/shared?tid=XXXXXX&foo=bar
     """
     raw = raw.strip()
     if "tid=" in raw:

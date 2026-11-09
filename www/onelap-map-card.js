@@ -88,6 +88,7 @@ class OnelapMapCard extends HTMLElement {
     const ratio = w && h ? (h / w) * 100 : 56.25;
 
     this.shadowRoot.innerHTML = `
+      <link rel="stylesheet" href="${LEAFLET_CSS}">
       <style>
         ha-card { overflow: hidden; }
         .header {
@@ -150,7 +151,9 @@ class OnelapMapCard extends HTMLElement {
       attributionControl: true,
     }).setView([20.5937, 78.9629], 5);
 
-    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      // OSM blocks tile requests that arrive without a Referer.
+      referrerPolicy: "strict-origin-when-cross-origin",
       maxZoom: 19,
       attribution: "&copy; OpenStreetMap contributors",
     }).addTo(this._map);
@@ -264,7 +267,7 @@ class OnelapMapCard extends HTMLElement {
       const path =
         `history/period/${start.toISOString()}` +
         `?filter_entity_id=${entityId}` +
-        `&minimal_response&no_attributes=false&end_time=${encodeURIComponent(
+        `&end_time=${encodeURIComponent(
           end.toISOString()
         )}`;
       const result = await this._hass.callApi("GET", path);

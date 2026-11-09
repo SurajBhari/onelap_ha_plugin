@@ -40,9 +40,9 @@ card (`hours_to_show`), the History panel, or the bundled Onelap Map Card below.
 1. Open the **Onelap** app (or web dashboard).
 2. Share the device you want to track.
 3. Copy the link — it looks like:
-   `https://r.onelap.in/#/shared?tid=FdUrRb`
+   `https://r.onelap.in/#/shared?tid=XXXXXX`
 
-You can paste either the **whole link** or just the **tracking id** (`FdUrRb`).
+You can paste either the **whole link** or just the **tracking id** (`XXXXXX`).
 
 > The link stays valid as long as sharing is enabled in the app. If you revoke
 > sharing, the integration stops receiving data.
