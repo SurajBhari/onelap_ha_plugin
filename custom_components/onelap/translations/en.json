@@ -35,7 +35,9 @@
       "status": { "name": "Status" },
       "satellites": { "name": "Satellites" },
       "total_distance": { "name": "Total distance" },
-      "last_fix": { "name": "Last GPS fix" }
+      "last_fix": { "name": "Last GPS fix" },
+      "battery": { "name": "Battery" },
+      "gsm_signal": { "name": "GSM signal" }
     },
     "binary_sensor": {
       "ignition": { "name": "Ignition" }

@@ -15,6 +15,7 @@ from homeassistant.components.sensor import (
 )
 from homeassistant.const import (
     DEGREE,
+    EntityCategory,
     UnitOfLength,
     UnitOfSpeed,
 )
@@ -113,6 +114,24 @@ SENSORS: tuple[OnelapSensorDescription, ...] = (
         icon="mdi:clock-outline",
         device_class=SensorDeviceClass.TIMESTAMP,
         value_fn=_last_fix,
+    ),
+    # Device health — reported as small "bar" values (roughly 0-5), not a
+    # percentage, so they are left unit-less diagnostic sensors.
+    OnelapSensorDescription(
+        key="battery",
+        translation_key="battery",
+        icon="mdi:battery",
+        entity_category=EntityCategory.DIAGNOSTIC,
+        state_class=SensorStateClass.MEASUREMENT,
+        value_fn=lambda d: _pos_attr(d, "battery"),
+    ),
+    OnelapSensorDescription(
+        key="gsm_signal",
+        translation_key="gsm_signal",
+        icon="mdi:signal",
+        entity_category=EntityCategory.DIAGNOSTIC,
+        state_class=SensorStateClass.MEASUREMENT,
+        value_fn=lambda d: _pos_attr(d, "gsm"),
     ),
 )
 

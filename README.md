@@ -25,6 +25,8 @@ For every vehicle on the share link:
 | `sensor.<vehicle>_satellites` | `15` | GPS satellites in use |
 | `sensor.<vehicle>_total_distance` | `4427 km` | odometer |
 | `sensor.<vehicle>_last_gps_fix` | timestamp | |
+| `sensor.<vehicle>_battery` | `4` | device battery level (bars, diagnostic) |
+| `sensor.<vehicle>_gsm_signal` | `4` | cellular signal (bars, diagnostic) |
 | `binary_sensor.<vehicle>_ignition` | `on`/`off` | |
 
 The `device_tracker` entity is a standard HA GPS tracker, so its location is
